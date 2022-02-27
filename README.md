@@ -41,10 +41,13 @@ _Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-st
         <td><img src="resources/2.jpg"></td>
     </tr>
     <tr>
-        <td><img src="resources/3.png"></td>
+        <td><img src="resources/3.jpg"></td>
     </tr>
     <tr>
-        <td><img src="resources/4.png"></td>
+        <td><img src="resources/4.jpg"></td>
+    </tr>
+    <tr>
+        <td><img src="resources/5.jpg"></td>
     </tr>
 </table>
 
