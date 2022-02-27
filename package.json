@@ -42,7 +42,7 @@
     "@ionic-native/local-notifications": "^5.34.0",
     "@ionic/angular": "^5.5.2",
     "@uiowa/digit-only": "^3.1.0",
-    "angularx-qrcode": "^11.0.0",
+    "angularx-qrcode": "^13.0.3",
     "cordova-plugin-actionsheet": "^2.3.3",
     "cordova-plugin-android-permissions": "^1.1.2",
     "cordova-plugin-background-mode": "^0.7.3",
@@ -64,7 +64,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~12.0.1",
+    "@angular-devkit/build-angular": "^12.2.16",
     "@angular-eslint/builder": "~12.0.0",
     "@angular-eslint/eslint-plugin": "~12.0.0",
     "@angular-eslint/eslint-plugin-template": "~12.0.0",
@@ -74,7 +74,7 @@
     "@angular/compiler-cli": "~12.0.1",
     "@angular/language-service": "~12.0.1",
     "@capacitor/cli": "3.1.1",
-    "@ionic/angular-toolkit": "^4.0.0",
+    "@ionic/angular-toolkit": "^6.0.0",
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
