@@ -1,0 +1,113 @@
+.font-semibold {
+  font-weight: 600;
+}
+
+ion-item.chat-input {
+  --border-radius: 10px;
+}
+
+ion-textarea {
+  --padding-top: 8px;
+}
+
+.badge-fab-unread {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: -5px;
+  z-index: 2;
+  padding: 3px 7px;
+  margin-right: -3px;
+  border-radius: 50%;
+}
+
+.attactment-list {
+  position: relative;
+  padding: 0.5rem;
+
+  ion-button {
+    width: 74px;
+    height: 74px;
+  }
+}
+.container-chat {
+  display: block;
+  width: 100%;
+  height: auto;
+  .item-chat {
+    display: inline-block;
+    max-width: 500px;
+    padding: 12px;
+    border-radius: 7px;
+    text-align: left;
+    position: relative;
+    box-shadow: 0px 1px 3px #0000002e;
+    p.title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+    p.time {
+      font-size: 0.9rem;
+      margin-bottom: -5px;
+      margin-top: 3px;
+      ion-icon {
+        margin-bottom: -1px;
+      }
+    }
+    p {
+      margin: 0;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 7px;
+    }
+  }
+}
+
+.container-chat.left {
+  text-align: left;
+  .item-chat {
+    background: var(--ion-color-secondary-contrast);
+    margin-right: 1rem;
+  }
+
+  .item-chat::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    border-right: 15px solid var(--ion-color-secondary-contrast);
+    border-top: 0px solid transparent;
+    border-left: 10px solid transparent;
+    border-bottom: 25px solid transparent;
+    margin-left: -18px;
+    top: 0;
+  }
+}
+
+.container-chat.right {
+  text-align: right;
+  .item-chat {
+    background: var(--ion-color-light-shade);
+    margin-left: 1rem;
+  }
+
+  .item-chat::after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    border-left: 15px solid var(--ion-color-light-shade);
+    border-top: 0px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 25px solid transparent;
+    margin-right: -18px;
+    top: 0;
+  }
+}
+
+.container-chat:last-child {
+  margin-bottom: 0;
+}

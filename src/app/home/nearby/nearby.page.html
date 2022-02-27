@@ -1,0 +1,47 @@
+<ion-content class="ion-padding">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <h1><ion-icon name="location" color="danger"></ion-icon><ion-text class="ion-margin-start">Temukan teman di sekitarmu.</ion-text></h1>
+  <p class="ion-padding-start ion-padding-end">Tenemukan teman <b>Kandah</b> disekitarmu, pastikan lokasimu aktif ya.</p>
+  <ion-searchbar showCancelButton="never" mode="ios" placeholder="Cari..." (input)="searchWhen($event)"></ion-searchbar>
+
+  <ion-grid *ngIf="showNearby.length <= 0">
+    <ion-col>
+      <p class="ion-text-center ion-no-margin">
+        <img class="img-not-found" src="./assets/petting.svg">
+      </p>
+    </ion-col>
+    <ion-col>
+      <p class="ion-padding ion-text-center ion-no-margin"><ion-text>Tidak ada teman kandah di sekitar kamu, jangan berkecil hati.</ion-text></p>
+    </ion-col>
+  </ion-grid>
+
+  <ion-list lines="none" *ngIf="showNearby.length > 0;">
+    <ion-item *ngFor="let item of showNearby; let index = index">
+      <ion-avatar class="avatar-kandah" slot="start">
+        <img [src]="item?.photoURL">
+        <span class="online-status" *ngIf="item?.isOnline"></span>
+      </ion-avatar>
+      <ion-label>
+        <h2 style="font-weight: 600;">{{ item?.name | titlecase }}</h2>
+        <p>
+          <ion-text color="medium">{{ item?.distance | number: '1.0-0' }}km</ion-text>
+        </p>
+      </ion-label>
+
+      <ion-buttons slot="end" *ngIf="(myInfo | async)?.friendsList[item?.uid] !== true">
+        <ion-button (click)="addToFriend(item?.uid, index)">
+          <ion-icon name="person-add-outline" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+      <ion-buttons slot="end" *ngIf="(myInfo | async)?.friendsList[item?.uid] === true">
+        <ion-button [routerLink]="'/kandah/' + item?.uid" color="secondary">
+          <ion-icon name="chatbubble" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

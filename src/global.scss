@@ -24,3 +24,39 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+:root {
+  ion-tab-button.tab-selected {
+      ion-icon, ion-label {
+          color: var(--ion-color-secondary) !important;
+          --ion-color-base: var(--ion-color-secondary) !important;
+      }
+  }
+
+  ion-tab-button:hover {
+    ion-icon, ion-label {
+        color: var(--ion-color-secondary) !important;
+        --ion-color-base: var(--ion-color-secondary) !important;
+    }
+  }
+}
+
+.qrcode {
+  text-align: center;
+  canvas {
+    width: 80vw !important;
+    height: 80vw !important;
+  }
+}
+
+ion-app.cameraView, ion-app.cameraView ion-content, ion-app.cameraView .nav-decor {
+  background: transparent none !important;
+}
+
+ion-app.cameraView ng-component.app-root {
+  display: none;
+}
+
+body.cameraView {
+  background: transparent none !important;
+}

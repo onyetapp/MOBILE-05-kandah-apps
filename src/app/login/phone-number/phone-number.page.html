@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Nomor Telephone</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="infoButton()">
+        <ion-icon slot="icon-only" name="alert-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>Masuk melalui nomor telephone.</h1>
+  <p>Pastikan nomor telephone anda aktif untuk melakukan tindakan ini.</p>
+  <input type="text" name="phoneNumber" [(ngModel)]="phoneNumber" class="phone-input ion-margin-bottom" placeholder="08XXXXXX" maxlength="14" minlength="9" inputmode="numeric" pattern="[0-9]*" digitOnly>
+  <div id="sign-in-button" style="opacity: 0;"></div>
+  <ion-button expand="block" mode="ios" color="success" (click)="loginWithPhone()" [disabled]="(phoneNumber.length < 9) ? 'disabled' : 'false'">
+    Berikutnya
+  </ion-button>
+</ion-content>

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="settings" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title><b>Pengaturan</b></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="menuMore($event)">
+        <ion-icon name="ellipsis-vertical" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-img src="./assets/composition-18.svg"></ion-img>
+  <ion-list class="profile-avatar" lines="none">
+    <ion-item>
+      <ion-avatar slot="start">
+        <ion-img [src]="(infoUsers | async)?.photoURL"></ion-img>
+      </ion-avatar>
+      <ion-label>
+        <h2 style="font-weight: 600;"><ion-text color="dark">{{ (infoUsers | async)?.name | titlecase }}</ion-text></h2>
+        <p><ion-text color="medium">{{ (infoUsers | async)?.story }}</ion-text></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list class="ion-margin-top">
+    <ion-item>
+      <ion-icon name="people-outline" slot="start"></ion-icon>
+      <ion-label>
+        <p><ion-text color="medium">Jumlah pertemanan</ion-text></p>
+        <h2>{{ ((attributeFriend | async)?.friendCount) ? (attributeFriend | async)?.friendCount : 0 }} Teman</h2>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="radio-outline" slot="start"></ion-icon>
+      <ion-label>
+        <p><ion-text color="medium">Jarak pencarian teman</ion-text></p>
+        <h2>10 km</h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

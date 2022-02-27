@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(
+    private background: BackgroundMode,
+    private platform: Platform
+  ) {
+  }
+
+  init() {
+    this.platform.ready().then(() => {
+      this.background.enable();
+    });
+  }
 }

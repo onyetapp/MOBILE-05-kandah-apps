@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home/chats" routerDirection="back">
+        <ion-icon name="arrow-back-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding" *ngIf="infoGuest | async as info">
+      <ion-item button color="secondary" lines="none" class="ion-no-padding">
+        <ion-avatar>
+          <img [src]="info?.photoURL">
+        </ion-avatar>
+        <ion-label class="ion-no-margin ion-padding-start">
+          <h2 class="ion-no-margin font-semibold">
+            <ion-text>{{ info?.name }}</ion-text>
+          </h2>
+          <p class="ion-no-margin">
+            <ion-text>{{ (info?.isOnline) ? 'Online' : 'Offline' }}</ion-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="menuMore($event)">
+        <ion-icon name="ellipsis-vertical" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" class="ion-padding" [scrollEvents]="true" (ionScroll)="scrollEvent($event)" #content>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" *ngIf="scrollDepthTriggered">
+    <ion-badge *ngIf="unReadScrollCount > 0" color="success" class="badge-fab-unread">{{ (unReadScrollCount > 99) ? '99+' : unReadScrollCount }}</ion-badge>
+    <ion-fab-button size="small" class="ion-no-margin" color="medium" (click)="btnScrollToBottom()">
+      <ion-icon name="chevron-down-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div *ngFor="let item of chats | async" [class]="(myUID === item?.recipient) ? 'container-chat left ion-margin-bottom' : 'container-chat right ion-margin-bottom'">
+    <div class="item-chat">
+      <p class="title" *ngIf="myUID === item?.recipient"><ion-text color="secondary">{{ (infoGuest | async)?.name | titlecase }}</ion-text></p>
+      <img *ngIf="item?.photoURL" [src]="(item?.type === 'location') ? item?.photoURL + '&key=' + enviromentGoogle.apiKey : item?.photoURL" (click)="imageClick(item)">
+      <p *ngIf="item?.message" class="ion-text-wrap" [innerHTML]="replaceLineBreaktoBR(item?.message)"></p>
+      <p class="time">
+        <ion-text color="medium"><ion-icon [name]="(item?.isRead) ? 'checkmark-done-outline' : 'time-outline'" [color]="(item?.isRead) ? 'secondary' : 'medium'"></ion-icon> {{ item?.createAt?.toDate() | date:'dd/MM/yyyy h:mm:ss a' }}</ion-text>
+      </p>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="attactment-list" style="display: none;" #attactment>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button color="primary" mode="ios" size="medium" (click)="attactmentImages()">
+          <ion-icon name="image"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button color="tertiary" mode="ios" size="medium" (click)="coomingSoon()">
+          <ion-icon name="videocam"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button color="success" mode="ios" size="medium" (click)="coomingSoon()">
+          <ion-icon name="volume-medium"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col size="3">
+        <ion-button color="danger" mode="ios" size="medium" (click)="attactmengLocation()">
+          <ion-icon name="location"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button (click)="(attactment.style.display === 'none') ? attactment.style.removeProperty('display') : attactment.style.display = 'none';">
+        <ion-icon name="attach" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="ion-no-padding">
+      <ion-item class="chat-input" lines="none">
+        <ion-textarea name="messages" [(ngModel)]="messages" rows="1" autofocus="true" placeholder="Ketik sesuatu..."></ion-textarea>
+      </ion-item>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="sendChat()">
+        <ion-icon name="send" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

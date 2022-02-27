@@ -1,0 +1,54 @@
+<ion-header translucent>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon name="people" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title><b>Pertemanan</b></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="barcodeScan()">
+        <ion-icon name="person-add" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-button (click)="showMyQr()">
+        <ion-icon name="qr-code" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar color="secondary">
+    <ion-searchbar placeholder="Cari..." (input)="searchFriend($event)"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="no-chats" *ngIf="(infoUsers | async)?.length <= 0">
+    <p class="ion-text-center">
+      <img src="./assets/sitting.svg">
+    </p>
+    <p style="margin: 0;"><ion-text color="medium">Belum ada teman kandah!</ion-text></p>
+    <!-- <ion-button color="secondary" mode="ios" class="ion-margin-top" (click)="findFromContacts()">
+      <ion-icon name="id-card" slot="start"></ion-icon>
+      Cari dari kontak
+    </ion-button> -->
+  </div>
+
+  <ion-list lines="none" *ngIf="(infoUsers | async)?.length > 0">
+    <ion-item *ngFor="let item of (infoUsers | async); let index = index">
+      <ion-avatar class="avatar-kandah" slot="start">
+        <img [src]="item?.photoURL">
+        <span class="online-status" *ngIf="item?.isOnline"></span>
+      </ion-avatar>
+      <ion-label>
+        <h2 style="font-weight: 600;">{{ item?.name | titlecase }}</h2>
+        <p>
+          <ion-text color="medium">{{ item?.story }}</ion-text>
+        </p>
+      </ion-label>
+      <ion-buttons slot="end">
+        <ion-button [routerLink]="'/kandah/' + item?.uid" color="secondary">
+          <ion-icon name="chatbubble" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>

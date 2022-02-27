@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Kandah</string>
+    <string name="title_activity_main">Kandah</string>
+    <string name="package_name">id.onyet.kandahapp</string>
+    <string name="custom_url_scheme">id.onyet.kandahapp</string>
+</resources>

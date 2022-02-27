@@ -1,0 +1,37 @@
+.no-chats {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--ion-color-step-600, #60646b);
+
+    img {
+      max-height: 50%;
+      max-width: 65%;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+  }
+}
+
+
+.avatar-kandah {
+  position: relative;
+}
+
+.online-status {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--ion-color-success);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0px 0px 5px #ffffff;
+}
+

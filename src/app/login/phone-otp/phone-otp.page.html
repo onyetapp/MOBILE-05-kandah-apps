@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="checkmark"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Verifikasi</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h1>Masukan kode verifikasi.</h1>
+  <p>Anda akan menerima kode verifikasi berupa pesan singkat (SMS). Jika anda belum menerima selama 5 menit cobalah masuk ulang dengan nomor telephon anda.</p>
+  <input type="text" name="verifyNumber" [(ngModel)]="verifyNumber" class="phone-input ion-margin-bottom" placeholder="XXXXXX" maxlength="6" minlength="6" inputmode="numeric" pattern="[0-9]*" digitOnly>
+  <ion-button expand="block" mode="ios" color="success" (click)="verifyButton()" [disabled]="(verifyNumber.length < 6) ? 'disabled' : 'false'">
+    Verifikasi Kode
+  </ion-button>
+</ion-content>

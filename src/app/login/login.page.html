@@ -1,0 +1,27 @@
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <ion-slides pager="true">
+
+    <ion-slide>
+      <div class="slide">
+        <img src="./assets/swinging.svg" />
+        <h2>Selamat Datang</h2>
+        <p>Aplikasi <b>Kandah</b> adalah aplikasi pesan singkat sederhana serta mencari teman <b>kandah</b> disekitar anda.
+        </p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="./assets/float.svg" />
+      <h2>Siap Mulai?</h2>
+      <p>Masuk menggunakan cara berikut.</p>
+      <ion-buttonx color="dark" style="min-width: 15rem;" class="ion-margin-bottom" routerLink="/login/phone-number">
+        <ion-icon slot="start" name="call"></ion-icon> Nomor Telephone
+      </ion-buttonx>
+      <ion-button color="danger" style="min-width: 15rem;" (click)="loginGoogle()">
+        <ion-icon slot="start" name="logo-google"></ion-icon> Akun Google Anda
+      </ion-button>
+
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

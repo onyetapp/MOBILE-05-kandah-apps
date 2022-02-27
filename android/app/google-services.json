@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "336222313650",
+    "project_id": "kandah-8cfa5",
+    "storage_bucket": "kandah-8cfa5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336222313650:android:a883c391f631891b303dab",
+        "android_client_info": {
+          "package_name": "id.onyet.kandahapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336222313650-906mg8v5ar4daqfvovlhkiuuu4bn6fbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "id.onyet.kandahapp",
+            "certificate_hash": "f16e12e97254eb015f21b7149238915fa5ce68f9"
+          }
+        },
+        {
+          "client_id": "336222313650-vtt4cfnsicqefog0mnbokmqlbnb73spo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC5Ek1AsPqYze49cJ-_mtcI15uS0T34vQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336222313650-vtt4cfnsicqefog0mnbokmqlbnb73spo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

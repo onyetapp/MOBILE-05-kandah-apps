@@ -1,0 +1,15 @@
+<ion-list lines="none">
+  <ion-list-header><ion-text color="medium">Menu lainnya</ion-text></ion-list-header>
+  <ion-item button (click)="editProfile()">
+    <ion-icon name="create-outline" slot="start"></ion-icon>
+    <ion-text>Ubah Profil</ion-text>
+  </ion-item>
+  <ion-item button (click)="takePhoto()">
+    <ion-icon name="camera-outline" slot="start"></ion-icon>
+    <ion-text>Ganti Foto</ion-text>
+  </ion-item>
+  <ion-item button (click)="keluarAkun()">
+    <ion-icon name="log-out" slot="start" color="danger"></ion-icon>
+    <ion-text color="danger">Keluar</ion-text>
+  </ion-item>
+</ion-list>

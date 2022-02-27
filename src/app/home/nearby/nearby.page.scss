@@ -1,0 +1,45 @@
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ion-color-step-600, rgba(0, 0, 0, 0.45));
+  text-align: left;
+}
+
+h1 {
+  margin-top: 0;
+  font-weight: 800;
+  color: var(--ion-color-secondary);
+
+  ion-icon {
+    display: inline-block;
+    font-size: 3.7rem;
+  }
+
+  ion-text {
+    display: inline-block;
+    width: 14.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+.img-not-found {
+  max-height: 50%;
+  max-width: 65%;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.avatar-kandah {
+  position: relative;
+}
+
+.online-status {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--ion-color-success);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  box-shadow: 0px 0px 5px #ffffff;
+}
