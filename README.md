@@ -35,24 +35,16 @@ _Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-st
 
 <table>
     <tr>
-        <td><img src="resources/1.png"></td>
-        <td><img src="resources/2.png"></td>
+        <td><img src="resources/1.jpg"></td>
+    </tr>
+    <tr>
+        <td><img src="resources/2.jpg"></td>
+    </tr>
+    <tr>
         <td><img src="resources/3.png"></td>
     </tr>
     <tr>
         <td><img src="resources/4.png"></td>
-        <td><img src="resources/5.png"></td>
-        <td><img src="resources/6.png"></td>
-    </tr>
-    <tr>
-        <td><img src="resources/7.png"></td>
-        <td><img src="resources/8.png"></td>
-        <td><img src="resources/9.png"></td>
-    </tr>
-    <tr>
-        <td><img src="resources/10.png"></td>
-        <td><img src="resources/11.png"></td>
-        <td><img src="resources/12.png"></td>
     </tr>
 </table>
 
